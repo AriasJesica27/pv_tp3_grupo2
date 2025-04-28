@@ -1,11 +1,11 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
-function TaskInput({ texto, setTexto, handleSubmit }) {
+function TaskInput({ texto, setTexto, agregarTarea }) {
   return (
     <div>
       <input type="text" value={texto} placeholder="Nueva Tarea" onChange={(e) => setTexto(e.target.value)}/>
       
-      <button onClick={handleSubmit}>Agregar</button>
+      <button onClick={agregarTarea}>Agregar</button>
     </div>
   );
 }

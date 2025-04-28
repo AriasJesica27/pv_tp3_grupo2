@@ -1,32 +1,23 @@
 import { useState } from "react";
-import TaskInput from "./TaskInput"; // Importa TaskInput que está en otro archivo
+import TaskInput from "./TaskInput"; 
+import TaskList from "./TaskList";
 
 function App() {
   const [texto, setTexto] = useState("");
   const [tareas, setTareas] = useState([]);
 
-  const handleSubmit = () => {
+  const agregarT = () => {
     if (texto.trim() !== "") {
       setTareas([...tareas, texto]);
-      setTexto(""); // limpia el input
+      setTexto("");
     }
   };
 
   return (
     <div>
-      <h1>Lista de tareas</h1>
-
-      <TaskInput 
-        texto={texto} 
-        setTexto={setTexto} 
-        handleSubmit={handleSubmit} 
-      />
-
-      <ul>
-        {tareas.map((tarea, index) => (
-          <li key={index}>{tarea}</li>
-        ))}
-      </ul>
+      <h1>Lista de Tareas</h1>
+      <TaskInput texto={texto} setTexto={setTexto} agregarTarea={agregarT} />
+      <TaskList tareas={tareas} /> {/* <-- Aquí mostramos la lista */}
     </div>
   );
 }
