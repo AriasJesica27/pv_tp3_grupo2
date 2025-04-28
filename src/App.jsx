@@ -1,23 +1,31 @@
 import { useState } from "react";
-import TaskInput from "./TaskInput"; 
-import TaskList from "./TaskList";
+import TaskInput from "./components/TaskInput";
+import TaskList from "./components/TaskList";
 
 function App() {
   const [texto, setTexto] = useState("");
   const [tareas, setTareas] = useState([]);
 
-  const agregarT = () => {
+  const handleSubmit = () => {
     if (texto.trim() !== "") {
-      setTareas([...tareas, texto]);
+      setTareas([...tareas, { id: Date.now(), texto, completada: false }]);
       setTexto("");
     }
   };
 
+  const handleToggle = (id) => {
+    setTareas(tareas.map(t => t.id === id ? { ...t, completada: !t.completada } : t));
+  };
+
+  const handleEliminar = (id) => {
+    setTareas(tareas.filter(t => t.id !== id));
+  };
+
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
-      <TaskInput texto={texto} setTexto={setTexto} agregarTarea={agregarT} />
-      <TaskList tareas={tareas} /> {/* <-- Aquí mostramos la lista */}
+    <div style={{ padding: "20px" }}>
+      <h1>Lista de tareas</h1>
+      <TaskInput texto={texto} setTexto={setTexto} handleSubmit={handleSubmit} />
+      <TaskList tareas={tareas} handleToggle={handleToggle} handleEliminar={handleEliminar} />
     </div>
   );
 }
