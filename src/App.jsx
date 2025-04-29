@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
+import ListaProductos from "./components/ListaProductos";
 
 function App() {
   const [texto, setTexto] = useState("");
@@ -26,6 +27,7 @@ function App() {
       <h1>Lista de tareas</h1>
       <TaskInput texto={texto} setTexto={setTexto} handleSubmit={handleSubmit} />
       <TaskList tareas={tareas} handleToggle={handleToggle} handleEliminar={handleEliminar} />
+      <ListaProductos/>
     </div>
   );
 }
