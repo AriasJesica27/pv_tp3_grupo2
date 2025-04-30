@@ -21,6 +21,9 @@ const ListaProductos = () => {
     mostrarProductosEnConsola();
   }, []);
 
+  // pto2
+  const productosMayores20 = productos.filter(producto => producto.precio > 20);
+
   return (
     <div>
       <h1 style={{fontSize:"15px"}}>Lista de Productos</h1>
@@ -31,9 +34,19 @@ const ListaProductos = () => {
           </li>
         ))}
       </ul>
+      
+      <h2 style={{ fontSize: "15px", marginTop: "20px" }}>Productos con precio mayor a $20</h2> 
+      <ul style={{ listStyleType: "none" }}>
+        {productosMayores20.map((producto, index) => (
+          <li key={index}>
+            {producto.descripcion} - ${producto.precio}
+          </li>
+        ))}
+      </ul>
+
     </div>
   );
-};
 
+};
 export default ListaProductos;
  
