@@ -24,6 +24,12 @@ const ListaProductos = () => {
   // pto2
   const productosMayores20 = productos.filter(producto => producto.precio > 20);
 
+  // pto 3
+    const productosConIva = productos.map(producto => ({
+      descripcion:producto.descripcion,
+      precioConIva: (producto.precio * 1.21).toFixed(2),
+    }));
+
   return (
     <div>
       <h1 style={{fontSize:"15px"}}>Lista de Productos</h1>
@@ -42,6 +48,17 @@ const ListaProductos = () => {
             {producto.descripcion} - ${producto.precio}
           </li>
         ))}
+      </ul>
+
+      <h3 style={{fontSize: "15px",marginTop:"20px"}}>Productos Con Precio IVA (21%)</h3>
+      <ul style={{listStyleType: "none"}}>
+        {productosConIva.map((producto,index) => (
+          <li key={index}>
+               {producto.descripcion} - ${producto.precioConIva}
+          </li>
+        
+      
+      ))}
       </ul>
 
     </div>
