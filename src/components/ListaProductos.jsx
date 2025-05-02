@@ -30,6 +30,9 @@ const ListaProductos = () => {
       precioConIva: (producto.precio * 1.21).toFixed(2),
     }));
 
+  // pto 4 
+  const productosOrdenados = [...productos].sort((a, b) => a.precio - b.precio);
+
   return (
     <div>
       <h1 style={{fontSize:"15px"}}>Lista de Productos</h1>
@@ -60,6 +63,16 @@ const ListaProductos = () => {
       
       ))}
       </ul>
+
+      <h2 style={{ fontSize: "15px", marginTop: "20px" }}>Productos ordenados por precio (menor a mayor)</h2>
+<ul style={{ listStyleType: "none" }}>
+  {productosOrdenados.map((producto, index) => (
+    <li key={index}>
+      {producto.descripcion} - ${producto.precio}
+    </li>
+  ))}
+</ul>
+
 
     </div>
   );
