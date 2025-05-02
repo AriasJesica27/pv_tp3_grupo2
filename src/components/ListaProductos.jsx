@@ -33,6 +33,9 @@ const ListaProductos = () => {
   // pto 4 
   const productosOrdenados = [...productos].sort((a, b) => a.precio - b.precio);
 
+  //pto 5
+  const productosConNuevo = [...productos, { descripcion: "Parlante Bluetooth", precio: 59000.90 }];
+
   return (
     <div>
       <h1 style={{fontSize:"15px"}}>Lista de Productos</h1>
@@ -72,6 +75,16 @@ const ListaProductos = () => {
     </li>
   ))}
 </ul>
+
+<h2 style={{ fontSize: "15px", marginTop: "20px" }}>Productos con nuevo producto agregado</h2>
+<ul style={{ listStyleType: "none" }}>
+  {productosConNuevo.map((producto, index) => (
+    <li key={index}>
+      {producto.descripcion} - ${producto.precio}
+    </li>
+  ))}
+</ul>
+
 
 
     </div>
