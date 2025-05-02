@@ -36,6 +36,16 @@ const ListaProductos = () => {
   //pto 5
   const productosConNuevo = [...productos, { descripcion: "Parlante Bluetooth", precio: 59000.90 }];
 
+   //punto 6 
+   const precioMinimo = productos.reduce((min, producto) => {
+    if (producto.precio < min) {
+      return producto.precio;
+    } else {
+      return min;
+    }
+  }, productos[0].precio);
+  const productosSinElMasBarato = productos.filter(producto => producto.precio !== precioMinimo);
+
   return (
     <div>
       <h1 style={{fontSize:"15px"}}>Lista de Productos</h1>
@@ -84,6 +94,15 @@ const ListaProductos = () => {
     </li>
   ))}
 </ul>
+    <h3 style={{fontSize: "15px",marginTop:"20px"}}>Array sin el producto que tiene el  precio mas bajo  </h3>
+      <ul style={{ listStyleType: "none" }}>
+        {productosSinElMasBarato.map((producto, index) => (
+        <li key={index}>
+         {producto.descripcion} - ${producto.precio}
+        </li>
+        ))}
+      </ul> 
+
 
 
 
