@@ -1,12 +1,13 @@
-# React + Vite
+Integrantes del Grupo 2 
+Nombre: Arias Yesica de los Angeles *nombre de usuario de github: AriasJesica27
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nombre: Farfan Juan Pablo *nombre de usuario de github: Juanpablo2511
 
-Currently, two official plugins are available:
+Nombre: Fernandez Nadia Evangelina *nombre de usuario de github: NadiaE-Fernandez
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nombre: Quispe Matias *nombre de github:Matifq14 
 
-## Expanding the ESLint configuration
+Descripcion del Proyecto
+Este proyecto es desarrollado con React, que tiene como objetivo mostrar una lista de productos y aplicar diversas operaciones sobre ella. A través de esta aplicación, se ejemplifican de manera práctica algunos de los métodos más utilizados en JavaScript para manipular arrays, como: .map(), .filter(), .reduce() y .sort().
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El propósito de este proyecto es aprender y reforzar el uso de funciones, el trabajo con estructuras de datos en JavaScript, y el renderizado dinámico de componentes con React.
